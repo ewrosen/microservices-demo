@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ewrosenmicroservicesdemo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ewrosenmicroservicesdemo
+  template:
+    metadata:
+      labels:
+        app: ewrosenmicroservicesdemo 
+    spec:
+      containers:
+        - name: ewrosenmicroservicesdemo 
+          image: erosendemoweaverworks.azurecr.io/ewrosenmicroservicesdemo
+          ports:
+          - containerPort: 9555
